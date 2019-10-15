@@ -1,0 +1,64 @@
+
+======
+ O/RM
+======
+
+[X] - IMPLEMENTED! Support DbType, SqlDbType, or System.Type, and auto-translate, rather than just supporting DbType.
+[X] - IMPLEMENTED! Operator overloads in Query<T> (make .IsEqualTo(..), etc,
+      an optional chainable feature rather than required)
+[X] - IMPLEMENTED! Serialize/deserialize mappings to/from XML
+
+------
+ NEXT
+------
+[ ] - More DB deep saving/deep loading tests, namely n-level deep saves/loads.
+[ ] - More tests and clean-up for serialize/deserialize mappings to/from XML
+
+
+--------
+ FUTURE
+--------
+[ ] - SQL optimizations for deep joins
+[ ] -> with tests
+[ ] Non-SQL data provider, i.e. flat files
+
+--------------
+ NICE-TO-HAVE
+--------------
+[ ] - SQL Server metadata conversion to deserializable XML
+[ ] -> with tests
+[ ] - IQueryable (limited LINQ support)
+[ ] - Complete LINQ support
+
+========
+ VS SDK
+========
+
+FUTURE
+[ ] - Build-time data mappings validation (SQL Server)
+[ ] - VS project integration with IntelliSense injection
+      for live-generated queries' field references
+
+=====
+ Web
+=====
+
+--------------
+FUTURE
+--------------
+ASP.NET MVC tools
+- Fully reflected URL route inferences: Trivialize URL routes by just using the paths as controller 
+  method signature match. Public controllers' public methods should, after all, not be public 
+  unless they are intended to be web-exposed. Controller method (action) overloads support:
+  Strings vs. ints vs. floats should be auto-detected using parsability. Consider some reserved 
+  words like "edit" as being appended to action name(??) or identify some other convention 
+  that facilitates CRUD-equivalent actions without parameterizing action methods. Route 
+  failures should reveal best-match controller's routes.
+  End goal: Zero configuration for URL routes, and absolutely no 404s that have no useful
+  developer HTML content.
+
+Gemli.Data CRUD on the browser
+- Extensions for ASP.NET Web Forms and ASP.NET MVC for 
+  wrapping DataModels to JSON with DataModel metadata
+- Javascript layer for lightweight data and query I/O
+- Silverlight layer
